@@ -4,12 +4,17 @@ namespace bst_linkedlist.library.SinglyLinkedList
 {
     public class NodeInt
     {
-        public int Value => throw new NotImplementedException();
-        public NodeInt Next => throw new NotImplementedException();
+        public int Value { get; set; }
+        public NodeInt Next { get; set; }
+
+        public NodeInt(int value = 0)
+        {
+            this.Value = value;
+        }
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return this.Value.ToString();
         }
     }
 }

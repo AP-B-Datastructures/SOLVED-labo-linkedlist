@@ -5,9 +5,18 @@ namespace bst_linkedlist.library
 {
     public class BubbleSort
     {
-        public static ListInt Sort(ListInt input)
+        public static void Sort(ListInt input)
         {
-            throw new NotImplementedException();
+            for (var i = 0; i < input.Length; ++i)
+            {
+                for (NodeInt current = input.First; current.Next != null; current = current.Next)
+                {
+                    if (current.Value > current.Next.Value)
+                    {
+                        (current.Value, current.Next.Value) = (current.Next.Value, current.Value);
+                    }
+                }
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 using System;
 
-// using bst_linkedlist.library.SinglyLinkedList;
+using bst_linkedlist.library.SinglyLinkedList;
 // using bst_linkedlist.library.DoublyLinkedList;
 
 namespace bst_linkedlist.library
@@ -8,22 +8,27 @@ namespace bst_linkedlist.library
     public class QueueInt
     {
         // Gebruik je best de SinglyLinkedList of de DoublyLinkedList? (kies het juiste using statement bovenaan)
-        // private ListInt data = new ListInt();
+        private ListInt _data = new ListInt();
+        public bool IsEmpty => this._data.IsEmpty;
 
-        public bool IsEmpty => throw new NotImplementedException();
+        public int Length => this._data.Length;
 
-        public bool IsFull => throw new NotImplementedException();
-
-        public int Length => throw new NotImplementedException();
+        public QueueInt()
+        {
+        }
 
         public void Enqueue(int newValue)
         {
-            throw new NotImplementedException();
+            this._data.Add(newValue);
         }
 
         public int Dequeue()
         {
-            throw new NotImplementedException();
+            if (IsEmpty)
+            {
+                throw new InvalidOperationException("ERROR: Can't dequeue an empty queue");
+            }
+            return this._data.RemoveFirst().Value;
         }
     }
 }
